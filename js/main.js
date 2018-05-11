@@ -160,8 +160,8 @@ game.Mystate.play = {
     update: function(){
         //碰撞检测
         game.physics.arcade.collide(bird, ground, this.overlapHandler, null, this);
-        game.physics.arcade.overlap(bird, this.pipe1Group, this.gameOver, null, this);
-        game.physics.arcade.overlap(bird, this.pipe2Group, this.gameOver, null, this);
+        // game.physics.arcade.overlap(bird, this.pipe1Group, this.gameOver, null, this);
+        // game.physics.arcade.overlap(bird, this.pipe2Group, this.gameOver, null, this);
         
         if(finish){
             if(angle <= 90){
