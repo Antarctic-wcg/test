@@ -263,9 +263,14 @@ game.Mystate.play = {
             jifen.anchor.set(0.5);
 
             //最大分数
-            if(this.score >= (this.maxScore ? lastScale : 0)){
-                this.maxScore = this.score;
-                lastScale = this.score;
+            // if(this.score >= (this.maxScore ? lastScale : 0)){
+            //     this.maxScore = this.score;
+            //     lastScale = this.score;
+            // }
+            this.maxScore = localStorage.getItem("maxScore") ? localStorage.getItem("maxScore") : 0;
+            if(this.score > this.maxScore){
+                localStorage.setItem("maxScore", this.score);
+                this.maxScore = localStorage.getItem("maxScore");
             }
 
             var style = { font: 'bold 20pt Arial', fill: 'white', align: 'left', wordWrap: true, wordWrapWidth: 450 };
